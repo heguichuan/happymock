@@ -1,0 +1,18 @@
+{
+  "name": "test-mock",
+  "version": "1.0.0",
+  "description": "mock",
+  "main": "index.js",
+  "scripts": {
+    "gulp": "gulp mock"
+  },
+  "author": "klse",
+  "license": "MIT",
+  "dependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.2.1",
+    "json-server": "^0.12.0",
+    "mockjs": "^1.0.1-beta3"
+  }
+}

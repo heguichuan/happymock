@@ -1,7 +1,7 @@
 var Mock = require("mockjs");
 
 module.exports = {
-    test1: Mock.mock({
+    test: Mock.mock({
         "error": 1,
         "message": "success3",
         "result|40": [

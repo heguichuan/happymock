@@ -1,25 +1,31 @@
-# mock-server
+# happy-mock
 
-mock-server，启动轻量级 node 服务器提供 api 接口给前端返回模拟数据。
+一个简单的数据`mock`服务器，提供`api`接口给前端返回模拟数据。
 
-## 启动 mock-server
+## 使用
 
-```bash
-//根目录启动终端
-//1.安装依赖
-yarn
-//启动mock-server：
-gulp mock //或者 yarn run gulp
-```
-
-2
-
-## 启动测试项目实例
+### 安装
 
 ```bash
-//在test目录启动终端
-1. yarn
-2. yarn run dev
+npm install -D happymock
 ```
 
-现在无法解决的问题是只能在当前目录执行 index.js 才能正常运行
+### 启动
+
+```bash
+# package.json的scripts中
+"dev-mock": "concurrently \"happymock\" \"npm run dev\""
+
+# 启动带mock服务的本地开发
+npm run dev-mock
+```
+
+### 可选配置
+
+`--path`: mock 数据存放目录，默认根目录的`./mock`目录
+
+`--port`: mock 服务器监听的端口，默认`6031`端口
+
+### 模拟接口
+
+在`mock/db/index.js`中写好数据，然后在`mock/route/index.js`中定义接口。可以使用`mockjs`快速生成模拟数据。

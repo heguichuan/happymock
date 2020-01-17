@@ -1,6 +1,8 @@
 # happymock
 
-一个简单的数据`mock`服务器，提供`api`接口给前端返回模拟数据。
+[English Docs](https://github.com/heguichuan/happymock/blob/master/README_EN.md)
+
+一个简单的基于[json-server](https://www.npmjs.com/package/json-server)的数据`mock`服务器，提供`api`接口给前端返回模拟数据。
 
 ## 使用
 
@@ -23,8 +25,10 @@ npm run dev-mock
 
 ```bash
 npm install -g happymock
-# 项目目录直接执行happymock，默认会在根目录创建mock文件夹
 happymock
+# 可以在任意目录执行happymock，默认会在当前目录下创建mock文件夹。
+# 你可以在每个项目根目录执行命令，以实现每个项目对应一个各自的mock目录。
+# 也可以在一个统一的目录执行命令，这样可以以一个服务供给不同的项目。
 ```
 
 ### 可选配置
@@ -35,6 +39,8 @@ happymock
 
 ### 模拟接口
 
-在`mock/db/index.js`中写好数据，然后在`mock/route/index.js`中定义接口。
+在`mock/db/index.js`中写好数据，属性名即为接口路径。
+
+> 也可以在`mock/route/index.js`中rewrite你的路由，**这一步不是必须的**。
 
 支持使用`mockjs`快速生成模拟数据。

@@ -1,4 +1,4 @@
-# happy-mock
+# happymock
 
 一个简单的数据`mock`服务器，提供`api`接口给前端返回模拟数据。
 
@@ -35,6 +35,6 @@ happymock
 
 ### 模拟接口
 
-在`mock/db/index.js`中写好数据，然后在`mock/route/index.js`中定义接口。可以使用`mockjs`快速生成模拟数据。
+在`mock/db/index.js`中写好数据，然后在`mock/route/index.js`中定义接口。
 
-支持使用`mockjs`来定义数据。
+支持使用`mockjs`快速生成模拟数据。

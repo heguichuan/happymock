@@ -1,7 +1,8 @@
 // server.js
 const path = require("path");
-const commander = require("./argv-define");
 const jsonServer = require("json-server");
+const getPort = require('get-port');
+const commander = require("./argv-define");
 const { checkFile } = require("./file-operate");
 
 // 拼接路径
@@ -28,6 +29,17 @@ server.use((request, res, next) => {
 });
 server.use(rewriter); // 注意：rewriter 的设置一定要在 router 设置之前
 server.use(router);
-server.listen(port, () => {
-    console.log("open mock server at localhost:" + port);
-});
+
+// 检测port是否可用
+(async () => {
+    let newPort;
+    try {
+        newPort = await getPort({ port });
+    } catch (error) {
+        newPort = port;
+        console.error(error);
+    }
+    server.listen(newPort, () => {
+        console.log("open mock server at http://localhost:" + newPort);
+    });
+})();

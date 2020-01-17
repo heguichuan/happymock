@@ -1,6 +1,6 @@
 {
     "name": "happymock",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A easy mock server",
     "bin": "./src/bin/index.js",
     "main": "./src/lib/server.js",
